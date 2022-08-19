@@ -45,8 +45,7 @@ class BaseCRUDServices(Generic[ModelType,SchemaType]):
 
 
     def delete_by_id(self, id: int) -> None:
-        # ver se funfa
-        self.model.query.filter_by(id=id).first_or_404().delete() #ver ser funciona
+        self.model.query.filter_by(id=id).first_or_404().delete()
 
         db.session.commit()
 

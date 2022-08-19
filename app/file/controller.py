@@ -61,5 +61,4 @@ class FileDetails(MethodView):
         except exc.IntegrityError as err:
             db.session.rollback()
             abort(make_response(jsonify({'errors':str(err.orig)},400)))
-        #Retirar do storage
         return {"msg":"Arquivo deletado!"},200
